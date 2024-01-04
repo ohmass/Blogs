@@ -1,0 +1,94 @@
+Machine Learning 可用在生活中的方方面面 譬如
+
+当你在搜索引擎搜索内容时， ML帮助搜索引擎进行rank web pages
+当你在社交媒体发图片时，ML可以分析出他们是谁并帮你tag好合照内的朋友
+当你在流媒体平台观看完一部自己喜欢的剧， ML可以帮你筛选出相似的“猜你喜欢”
+ML还可以帮你过滤邮件内的fraud
+
+ML无处不在，并且已经被运用在人们的日常生活中了，只是可能我们并未发觉
+
+现在开始 我们学习一些ML的Algorithm，并了解如何让他们表现得更好
+
+ML是 AI 的一个sub-field
+
+
+#
+监督式机器学习 与 非监督式机器学习 
+(Supervised Learning and Unsupervised Learning)
+
+“Field of stuudy that gives computers the ability to learn without being explicitly programmed”
+ -- Arthur Samuel (1959)
+
+Supervised Learning:
+    rapid advancements
+    used most in real world applications
+    
+    X -> Y
+    input -> output     Learns from being given "Right answers"
+
+    1) Regression: Predict a number  infinitely many possible outputs
+
+    2) Classification: Predict small, finite, limited set of possible output categories/classes ;
+                         could be numeric/non-numeric
+
+
+Unsupervised Learning:
+    Data only comes with inputs x, but not output labels y. 
+    Algorithm has to find structure in the data.
+    1) Clustering: group similar data points together.
+                    cluster a bunch of data without lable, machine decided
+                    eg. Google News
+    2) Anomaly detection: find unusual data points.
+                            eg. email fraud
+    3) Dimensionality reduction: compress data using fewer numbers.
+
+
+
+Notation: 
+  Model: f w,b(x) = wx + b
+    x = "input" variable feature;
+    y = "output" variable/ "target" variable
+    m = num of training examples
+    (x,y) = single training example
+    w,b: parameters / coefficients / weights 
+         (the vars that u can adjust during training in order to improve the model)
+
+Training set: Data used to train the Model
+
+
+Linear Regression Model:
+    
+    <insert linear_reg1.png>
+
+
+Cost function:
+
+    <insert linear_reg2.png>
+
+    <insert C1_W1_Lab03_Cost_function_Soln-Copy1.ipynb>
+
+
+Gradient descent:
+
+    We need to find the min J(w,b), the gradient descent can help us.
+    通过从一个选择的起始位置进行梯度下降，我们能找到一个最低点J(w,b).
+
+    local minima: J(w,b) 可能不是碗形的，可能会有很多个谷底。 从不同的出发点进行梯度下降，会得到不同的最低点，这个点就叫loacal minima
+
+    <insert gradient_des1, 2.png>
+
+    Learning Rate: a
+
+    <insert Learning_Rate.png>
+
+    It can reach local minimum with fixed learning rate.
+        Near a local minimum,
+            - Derivative becomes smaller
+            - Update steps become smaller
+        Can reach minimum without decreasing learning rate a.
+
+    
+    Convex function: bowl-shaped function; only have one global minimum.
+
+    "Batch" Gradient descent:
+        <insert Batch_gd.png>
